@@ -20,6 +20,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ServiceSalonsComponent } from './components/service-salons/service-salons.component';
+import { SalonsComponent } from './components/salons/salons.component';
+import { SalonDetailsComponent } from './components/salon-details/salon-details.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ServiceSalonsComponent } from './components/service-salons/service-salo
     AlertComponent,
     ServicesComponent,
     ServiceSalonsComponent,
+    SalonsComponent,
+    SalonDetailsComponent,
   ],
     imports: [
         BrowserModule,

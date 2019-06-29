@@ -1,4 +1,5 @@
 import {Service} from './service';
+import {SalonPerService} from './salonPerService';
 
 export class Salon {
     id: number;
@@ -6,8 +7,8 @@ export class Salon {
     address: string;
     phoneNumber: string;
     image: string;
-    desciption: string;
+    description: string;
     latitude: number;
     longitude: number;
-    services: Service[];
+    services: SalonPerService[];
 }

@@ -30,6 +30,7 @@ export class ServiceSalonsComponent implements OnInit {
     private getSalons(): void {
         this.service.getSalons(1).subscribe(salons => {
             this.allSalons = salons;
+            console.log(this.allSalons.beautyService.designation);
         });
     }
 }

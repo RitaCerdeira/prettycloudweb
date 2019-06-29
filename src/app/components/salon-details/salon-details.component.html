@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 id="title">{{salon.name}}</h1>
+            <p>{{salon.description}}</p>
+            <hr />
+            <h3>Detalhes</h3>
+            <b>Morada</b><p>{{salon.address}}</p>
+            <b>Contacto</b><p>{{salon.phoneNumber}}</p>
+            <hr />
+
+            <h3>Serviços disponbilizados</h3>
+            <div *ngFor="let service of salon.services">
+                <p><b>{{service.beautyService.designation}}:</b>{{service.price}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="{{salon.image}}">
+        </div>
+    </div>
+</div>

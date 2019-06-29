@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Salon} from '../models/salon';
 import {Observable} from 'rxjs';
-import {Service} from '../models/service';
-import {SalonPerService} from '../models/salonPerService';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class BeautyServiceService {
+export class SalonsService {
 
     private baseUrl = 'http://localhost:8080/api/';
     private httpOptions: any;
@@ -19,13 +18,13 @@ export class BeautyServiceService {
         };
     }
 
-    getServices(): Observable<any> {
-        const url = this.baseUrl + 'services';
-        return this.http.get(url, this.httpOptions);
+    getAllSalons() {
+        const url = this.baseUrl + 'salons';
+        return this.http.get< Salon[]>(url);
     }
 
-    getSalons(id: number): Observable<any> {
-        const url = this.baseUrl + 'services/1/salons';
-        return this.http.get<SalonPerService>(url);
+    getSalonDetails(id: number): Observable<any> {
+        const url = this.baseUrl + 'salons/' + id;
+        return this.http.get(url, this.httpOptions);
     }
 }

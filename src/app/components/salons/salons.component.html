@@ -1,0 +1,18 @@
+<div class="container">
+    <h4 id="title">Salões</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let salon of salons" style="margin: 20px">
+            <a routerLink="/salon/{{salon.id}}" style="text-decoration: none; color: inherit">
+                <div class="card-rounded" style="height: 100%; background-color: lightgray; border-width: medium; border-bottom: medium">
+                    <div class="card-body" style="text-align: center">
+                        <img src="{{salon.image}}" style="width:300px; height: 300px">
+                        <p class="card-text">{{salon.name}}</p>
+                        <p class="card-text">{{salon.address}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

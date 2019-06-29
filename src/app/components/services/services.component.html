@@ -2,14 +2,18 @@
     <h4 id="title">Serviços disponibilizados</h4>
     <hr />
 
-    <div class="col-md-4" *ngFor="let service of services">
-        <div class="card-rounded" style="background-color: lightgrey; border-width: medium">
-            <div class="card-body">
-                <img src="{{service.link}}" style="width: 50%; height: 50%">
-                <p class="card-text">{{service.designation}}</p>
-                <button id="getSalons" class="btn btn-light" (click)="getSalons()">Ver salões</button>
-            </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let ser of services" style="margin: 20px">
+            <a routerLink="/service/{{ser.id}}" style="text-decoration: none; color: inherit">
+                <div class="card-rounded" style="height: 100%; background-color: lightgray; border-width: medium; border-bottom: medium">
+                    <div class="card-body" style="text-align: center">
+                        <img src="{{ser.link}}" style="width: 200px; height: 200px">
+                        <p class="card-text">{{ser.designation}}</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
+
 
 </div>
