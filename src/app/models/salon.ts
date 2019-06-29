@@ -1,4 +1,3 @@
-import {Service} from './service';
 import {SalonPerService} from './salonPerService';
 
 export class Salon {

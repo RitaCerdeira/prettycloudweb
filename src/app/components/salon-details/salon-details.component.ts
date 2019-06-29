@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Salon} from '../../models/salon';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SalonsService} from '../../services/salons.service';
+import {Review} from '../../models/review';
 
 @Component({
     selector: 'app-salon-details',
@@ -11,7 +12,8 @@ import {SalonsService} from '../../services/salons.service';
 
 export class SalonDetailsComponent implements OnInit {
 
-    private salon: Salon;
+    private salon = new Salon();
+    private review = new Review();
 
     constructor(private route: ActivatedRoute, private router: Router, private service: SalonsService) { }
 
@@ -24,5 +26,15 @@ export class SalonDetailsComponent implements OnInit {
         this.service.getSalonDetails(id).subscribe(salon => {
             this.salon = salon;
         });
+    }
+
+    onSubmit() {
+        this.review.client = null;
+        this.review.salon = this.salon;
+        console.log(this.review);
+        this.service.addReviews(this.review).subscribe(response => {
+            console.log(response);
+        });
+        this.router.navigate(['/salons']);
     }
 }
