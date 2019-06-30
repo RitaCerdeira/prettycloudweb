@@ -25,7 +25,7 @@ export class BeautyServiceService {
     }
 
     getSalons(id: number): Observable<any> {
-        const url = this.baseUrl + 'services/1/salons';
-        return this.http.get<SalonPerService>(url);
+        const url = this.baseUrl + 'services/' + id;
+        return this.http.get(url, this.httpOptions);
     }
 }

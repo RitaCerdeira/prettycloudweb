@@ -25,7 +25,6 @@ export class ServicesComponent implements OnInit {
     getServices(): void {
         this.serviceService.getServices().subscribe(services => {
             this.services = services;
-            console.log(this.services);
         });
     }
 }

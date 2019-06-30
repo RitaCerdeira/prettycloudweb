@@ -1,3 +1,18 @@
 <div class="container">
-    <h4 id="title">{{allSalons.id.toString()}}</h4>
+    <h4 id="title">Salões que oferecem {{beauty.designation}}</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let s of beauty.salons" style="margin: 20px">
+            <a routerLink="/salon/{{s.salon.id}}" style="text-decoration: none; color: inherit">
+                <div class="card-rounded" style="height: 100%; background-color: lightgray; border-width: medium; border-bottom: medium">
+                    <div class="card-body" style="text-align: center">
+                        <img src="{{s.salon.image}}" style="width:300px; height: 300px">
+                        <p class="card-text">{{s.salon.name}}</p>
+                        <p class="card-text">{{s.salon.address}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

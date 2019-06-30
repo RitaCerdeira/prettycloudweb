@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BeautyServiceService} from '../../services/beauty-service.service';
 import {SalonPerService} from '../../models/salonPerService';
+import {Service} from '../../models/service';
 
 @Component({
     selector: 'app-service-salons',
@@ -16,7 +17,7 @@ import {SalonPerService} from '../../models/salonPerService';
 
 export class ServiceSalonsComponent implements OnInit {
 
-    public allSalons = new SalonPerService();
+    public beauty = new Service();
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -28,9 +29,9 @@ export class ServiceSalonsComponent implements OnInit {
 
 
     private getSalons(): void {
-        this.service.getSalons(1).subscribe(salons => {
-            this.allSalons = salons;
-            console.log(this.allSalons.beautyService.designation);
+        const id = +this.route.snapshot.paramMap.get('num');
+        this.service.getSalons(id).subscribe(salons => {
+            this.beauty = salons;
         });
     }
 }

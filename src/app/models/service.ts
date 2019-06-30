@@ -1,8 +1,8 @@
-import {Salon} from './salon';
+import {SalonPerService} from './salonPerService';
 
 export class Service {
     id: number;
     designation: string;
     link: string;
-    salons: Salon[];
+    salons: SalonPerService[];
 }
